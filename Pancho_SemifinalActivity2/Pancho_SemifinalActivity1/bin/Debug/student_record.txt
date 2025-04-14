@@ -1,0 +1,18 @@
+ID: 21515010
+Name: thea  carp 
+Course: bsit
+Year: 2
+Birthday: 8-31-2004
+
+ID: 12345678
+Name: marey  dfh
+Course: bsit
+Year: 2
+Birthday: 12-15-2004
+
+ID: 21454640
+Name: mj solon pan 
+Course: bsit
+Year: 2
+Birthday: 09-23-2004
+
