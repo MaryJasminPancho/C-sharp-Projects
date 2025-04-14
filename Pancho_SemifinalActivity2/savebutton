@@ -1,0 +1,48 @@
+private void deleteBtn_Click(object sender, EventArgs e)
+{
+    if (string.IsNullOrWhiteSpace(textBox1.Text))
+    {
+        MessageBox.Show("Please enter the ID of the record to delete.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
+
+    string idToDelete = textBox1.Text; // Get the ID to delete
+    string filePath = "student_record.txt";
+
+    if (!File.Exists(filePath))
+    {
+        MessageBox.Show("No records found to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return;
+    }
+
+    var lines = File.ReadAllLines(filePath).ToList();
+    bool recordFound = false;
+    for (int i = 0; i < lines.Count; i++)
+    {
+        if (lines[i].Contains($"ID: {idToDelete}"))
+        {
+            recordFound = true;
+            while (i < lines.Count && !string.IsNullOrWhiteSpace(lines[i]))
+            {
+                lines.RemoveAt(i); // Remove the current line
+            }
+
+            if (i < lines.Count && string.IsNullOrWhiteSpace(lines[i]))
+            {
+                lines.RemoveAt(i);
+            }
+
+            break;
+        }
+    }
+
+    if (recordFound)
+    {
+        File.WriteAllLines(filePath, lines);
+        MessageBox.Show("Record deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    else
+    {
+        MessageBox.Show("Record not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
