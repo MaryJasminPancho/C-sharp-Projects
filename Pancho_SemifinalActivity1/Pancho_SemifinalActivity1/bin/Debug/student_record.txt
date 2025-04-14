@@ -1,0 +1,14 @@
+
+
+ID: 
+Name:    
+Course: 
+Year: 
+Birthday: MM-DD-YY
+
+ID: 21454640
+Name: mj solon panch 
+Course: bscs
+Year: 2
+Birthday: 12-15-2004
+
