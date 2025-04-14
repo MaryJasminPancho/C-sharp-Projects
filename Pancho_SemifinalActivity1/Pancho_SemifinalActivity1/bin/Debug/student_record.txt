@@ -1,8 +1,0 @@
-
-
-ID: 
-Name:    
-Course: 
-Year: 
-Birthday: MM-DD-YY
-
